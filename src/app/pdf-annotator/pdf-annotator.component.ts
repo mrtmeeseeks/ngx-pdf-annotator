@@ -46,7 +46,7 @@ export class PdfAnnotatorComponent implements OnInit {
     const annotationRenderer = new PdfAnnotationRenderer(this._renderer);
 
     this.renderOptions = new RenderOptions(
-      '/assets/rest2.pdf',
+      'https://taulantdisha.github.io/ngx-pdf-annotator/assets/rest2.pdf',
       this._el.nativeElement,
       annotationRenderer
     );

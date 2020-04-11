@@ -46,7 +46,7 @@ export class PdfAnnotatorComponent implements OnInit {
     const annotationRenderer = new PdfAnnotationRenderer(this._renderer);
 
     this.renderOptions = new RenderOptions(
-      'http://www.africau.edu/images/default/sample.pdf',
+      '/assets/rest2.pdf',
       this._el.nativeElement,
       annotationRenderer
     );

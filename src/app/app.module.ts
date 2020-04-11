@@ -8,7 +8,7 @@ import { APP_BASE_HREF } from '@angular/common';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, PdfAnnotatorModule, BrowserAnimationsModule],
-  providers: [{provide: APP_BASE_HREF, useValue : '/pdf/'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

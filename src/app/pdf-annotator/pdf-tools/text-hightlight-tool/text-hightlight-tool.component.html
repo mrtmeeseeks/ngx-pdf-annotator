@@ -1,0 +1,13 @@
+<ng-template cdkPortal #highlightPopover="cdkPortal">
+    <mat-toolbar>
+        <button mat-button>
+          <mat-icon>file_copy</mat-icon>
+        </button>
+        <button mat-button (click)="highlight(); $event.stopPropagation()">
+          <mat-icon>font_download</mat-icon>
+        </button>
+        <button mat-button>
+          <mat-icon>strikethrough_s</mat-icon>
+        </button>
+      </mat-toolbar>
+</ng-template>

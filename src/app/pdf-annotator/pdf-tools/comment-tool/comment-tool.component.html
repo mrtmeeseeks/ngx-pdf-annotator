@@ -1,0 +1,51 @@
+<div class="page-group" *ngFor="let page of annotations" (click)="$event.stopPropagation()">
+  <div class="page-num">Page {{ page.page }}</div>
+  <div class="annotation-wrapper" *ngFor="let annotation of page.annotations">
+    <div class="summary" (click)="open(annotation)">
+      <div class="title">
+        <mat-icon>font_download</mat-icon>
+        <div class="date">{{ annotation?.timestamp | date }}</div>
+      </div>
+      <div class="text" matTooltip="{{ annotation?.text }}">
+        {{ annotation?.text }}
+      </div>
+    </div>
+    <div class="notes" *ngIf="selected?.id === annotation.id" [@slideInOut]>
+      <div class="note" *ngFor="let note of annotation?.notes">
+        <div class="summary">
+          <div class="title">
+            <div class="date">{{ note?.timestamp | date }}</div>
+          </div>
+          <div class="text">
+            {{ note?.text }}
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <mat-form-field appearance="outline" class="text-field">
+          <mat-label>Leave a note</mat-label>
+          <textarea
+            #textInput
+            [formControl]="text"
+            matInput
+            placeholder="Ex. It makes me feel..."
+          ></textarea>
+        </mat-form-field>
+        <div class="actions">
+          <button mat-button mat-flat-button (click)="text.reset(); open(selected)">
+            Cancel
+          </button>
+          <button
+            [disabled]="!text.value"
+            mat-button
+            mat-flat-button
+            color="primary"
+            (click)="addNote(annotation); $event.stopPropagation()"
+          >
+            Reply
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

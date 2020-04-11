@@ -1,0 +1,19 @@
+<div
+  #pdfEditOverlay
+  class="annotation-overlay"
+  id="pdf-annotate-edit-overlay"
+></div>
+
+<ng-template cdkPortal #editPopover="cdkPortal">
+  <mat-toolbar>
+    <button mat-button (click)="addNote()">
+      <mat-icon>insert_comment</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>palette</mat-icon>
+    </button>
+    <button mat-button (click)="deleteAnnotation()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-toolbar>
+</ng-template>

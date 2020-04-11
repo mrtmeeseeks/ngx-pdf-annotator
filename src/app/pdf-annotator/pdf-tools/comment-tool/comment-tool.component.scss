@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+
+  .page-num {
+    padding: 10px;
+    background: #3f51b5;
+    color: white;
+    border-radius: 4px;
+    margin: 5px 0;
+  }
+
+  .annotation-wrapper {
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    + .annotation-wrapper {
+      margin-top: 6px;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 10px;
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+      }
+    }
+
+    .text {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .notes {
+      .form {
+        padding: 10px;
+        width: 100%;
+      }
+
+      ::ng-deep .text-field {
+        width: 100%;
+        .mat-form-field-wrapper {
+          margin: 0;
+          padding: 0;
+          margin-bottom: 10px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

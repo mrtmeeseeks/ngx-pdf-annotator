@@ -1,0 +1,12 @@
+:host {
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+      padding: !important;
+      height: 60px;
+  
+      & > .mat-button {
+        border-radius: 0;
+        line-height: 60px;
+      }
+    }
+  }

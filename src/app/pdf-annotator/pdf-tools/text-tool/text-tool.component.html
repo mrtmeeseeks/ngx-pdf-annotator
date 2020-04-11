@@ -1,0 +1,8 @@
+<ng-template cdkPortal #textTool="cdkPortal">
+  <mat-form-field class="example-full-width" [floatLabel]="'never'">
+    <input [formControl]="formControl" 
+    (blur)="onBlur()"
+    (keyup.enter)="onBlur()"
+     matInput placeholder="Enter text here" />
+  </mat-form-field>
+</ng-template>

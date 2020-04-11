@@ -1,0 +1,34 @@
+<div #pdfViewer id="viewer" class="pdfViewer">
+  <div
+  class="page"
+  [style.width.px]="renderOptions?.page?.width"
+  [style.height.px]="renderOptions?.page?.height"
+  [attr.data-loaded]="false"
+  [attr.data-page-number]="page?.pageNumber"
+  [id]="page?.containerId"
+  *ngFor="let page of renderOptions?.pagesSize | renderPages"
+>
+  <div
+    class="canvasWrapper"
+    [style.height.px]="renderOptions?.page?.height"
+    [style.width.px]="renderOptions?.page?.width"
+  >
+    <canvas [id]="page.canvasId"></canvas>
+  </div>
+
+  <svg
+    class="annotationLayer"
+    [attr.width]="renderOptions?.page?.width"
+    [attr.height]="renderOptions?.page?.height"
+    [style.height.px]="renderOptions?.page?.height"
+    [style.width.px]="renderOptions?.page?.width"
+  ></svg>
+
+  <div
+    class="textLayer"
+    [style.height.px]="renderOptions?.page?.height"
+    [style.width.px]="renderOptions?.page?.width"
+  ></div>
+</div>
+</div>
+

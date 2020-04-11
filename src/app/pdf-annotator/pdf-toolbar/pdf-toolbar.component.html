@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <button
+    mat-button
+    (click)="setTool(tool.name)"
+    [class.active]="selectedTool === tool.name"
+    color="primary"
+    [matTooltip]="tool.tooltip"
+    *ngFor="let tool of tools"
+  >
+    <mat-icon>{{ tool.icon }}</mat-icon>
+  </button>
+  <button [class.zoom]="true" mat-button matTooltip="Zoom out" color="primary">
+    <mat-icon>zoom_out</mat-icon>
+  </button>
+  <button [class.zoom]="true" mat-button matTooltip="Zoom in" color="primary">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button
+    [class.scale]="true"
+    mat-button
+    [matMenuTriggerFor]="menu"
+    color="primary"
+  >
+    <span class="scale-title">{{ scale ? scale + " %" : "Scale" }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="setScale(0.5)">50%</button>
+    <button mat-menu-item (click)="setScale(1)">100%</button>
+    <button mat-menu-item (click)="setScale(1.33)">133%</button>
+    <button mat-menu-item (click)="setScale(1.5)">150%</button>
+    <button mat-menu-item (click)="setScale(2)">200%</button>
+  </mat-menu>
+</mat-toolbar>

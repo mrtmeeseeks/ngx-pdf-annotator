@@ -1,0 +1,26 @@
+:host {
+  position: absolute;
+  ::ng-deep .indicator {
+    position: absolute;
+
+    &__cta {
+      top: -10px;
+      left: 50%;
+      position: absolute;
+    }
+
+    .indicator__cta-link {
+      z-index: 99999;
+      border-radius: 5px 5px 5px 5px;
+      overflow: hidden;
+      bottom: 0px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.26);
+      color: #ffffff;
+      cursor: pointer;
+      left: 0px;
+      position: absolute;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  }
+}

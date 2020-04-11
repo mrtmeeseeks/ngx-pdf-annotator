@@ -1,0 +1,31 @@
+<app-pdf-toolbar></app-pdf-toolbar>
+
+<div id="pdf-container">
+  <div id="content-wrapper" class="content-wrapper">
+    <app-pdf-page [renderOptions]="options$ | async"> </app-pdf-page>
+  </div>
+  <div id="comment-wrapper">
+    <h4>Comments</h4>
+    <perfect-scrollbar [config]="{}">
+      <app-comment-tool [renderOptions]="renderOptions"></app-comment-tool>
+    </perfect-scrollbar>
+  </div>
+
+  <div id="marker-start" class="fas fa-map-marker marker marker-start">
+    <mat-icon color="primary">room</mat-icon>
+  </div>
+  <div id="marker-end" class="fas fa-map-marker marker marker-end">
+    <mat-icon color="primary">room</mat-icon>
+  </div>
+
+  <app-annotation-overlay [renderOptions]="renderOptions"></app-annotation-overlay>
+
+  <app-pdf-popover-container
+    (click)="$event.preventDefault(); $event.stopPropagation()"
+    (mousedown)="$event.preventDefault(); $event.stopPropagation()"
+    (mouseup)="$event.stopPropagation(); $event.stopPropagation()"
+  ></app-pdf-popover-container>
+
+  <app-text-hightlight-tool></app-text-hightlight-tool>
+  <text-tool></text-tool>
+</div>

@@ -1,0 +1,50 @@
+:host {
+  height: 100%;
+  display: flex;
+
+  .mat-button {
+    border-radius: 0;
+    &.active {
+      background-color: #d0d0d0;
+    }
+  }
+}
+
+::ng-deep .example-full-width {
+  display: block;
+  width: 250px;
+  background-color: white;
+  input {
+    font-size: 18px;
+    padding: 0 16px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.87);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .mat-form-field-infix {
+    border-bottom: none;
+    margin-top: 0;
+    border-top: none;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  .mat-form-field-label-wrapper {
+    line-height: 40px;
+
+    .mat-form-field-label > span {
+      padding: 0 16px;
+    }
+  }
+
+  .mat-form-field-underline {
+    display: none;
+    height: 0px;
+    bottom: 0;
+  }
+}

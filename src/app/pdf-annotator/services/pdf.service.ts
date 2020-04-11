@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import * as PDFJS from 'pdfjs-dist';
 PDFJS.GlobalWorkerOptions.workerSrc = 'https://taulantdisha.github.io/ngx-pdf-annotator/assets/pdf.worker.min.js';
-PDFJS['disableWorker'] = true;
 
 @Injectable({
   providedIn: 'root',

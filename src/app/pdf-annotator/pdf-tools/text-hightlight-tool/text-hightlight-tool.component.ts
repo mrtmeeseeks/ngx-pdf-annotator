@@ -5,7 +5,6 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   NgZone,
-  Renderer2,
 } from '@angular/core';
 import { PdfToolService } from '../../services/pdf-tool.service';
 import { CdkPortal } from '@angular/cdk/portal';
@@ -117,7 +116,7 @@ export class TextHightlightToolComponent implements OnInit {
       range: Range;
       selection: Selection;
     };
-    if (sel && sel.type === 'Range') {
+    if (sel && sel.getRangeAt && sel.type === 'Range') {
       res = {
         range: sel.getRangeAt(0),
         selection: sel,

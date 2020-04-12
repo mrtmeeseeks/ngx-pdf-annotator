@@ -244,23 +244,23 @@ export class PdfPageComponent implements OnInit, OnChanges {
     this._renderer.setAttribute(
       canvas,
       'width',
-      roundToDivide(viewport.width * outputScale.sx, sfx[0])
+      viewport.width.toString()
     );
     this._renderer.setAttribute(
       canvas,
       'height',
-      roundToDivide(viewport.height * outputScale.sy, sfy[0])
+      viewport.height.toString()
     );
 
     this._renderer.setStyle(
       canvas,
       'width',
-      roundToDivide(viewport.width, sfx[1]) + 'px'
+      viewport.width + 'px'
     );
     this._renderer.setStyle(
       canvas,
       'height',
-      roundToDivide(viewport.height, sfx[1]) + 'px'
+      viewport.height + 'px'
     );
 
     this._renderer.setAttribute(

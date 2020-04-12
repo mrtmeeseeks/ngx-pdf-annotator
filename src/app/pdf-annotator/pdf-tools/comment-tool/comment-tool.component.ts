@@ -88,14 +88,27 @@ export class CommentToolComponent implements OnInit {
 
     this.renderOptions.events.onAdd().subscribe((annotation: Annotation) => {
       const page = this.annotations.find((p) => p.page === annotation.page);
-      page.annotations = [...page.annotations, annotation];
+
+      if (!page) {
+        this.annotations = [...this.annotations, {
+          page: annotation.page,
+          annotations: [annotation]
+        }];
+      } else {
+        page.annotations = [...page.annotations, annotation];
+      }
       this.open(annotation);
       this._cd.markForCheck();
     });
 
     this.renderOptions.events.onRemove().subscribe((annotation: Annotation) => {
       const page = this.annotations.find((p) => p.page === annotation.page);
-      page.annotations = page.annotations.filter((a) => a.id === annotation.id);
+      page.annotations = page.annotations.filter((a) => a.id !== annotation.id);
+
+      console.log(page);
+      if (page.annotations.length === 0) {
+        this.annotations = this.annotations.filter((p) => p.page !== annotation.page);
+      }
       this.selected = null;
       this._cd.markForCheck();
     });
